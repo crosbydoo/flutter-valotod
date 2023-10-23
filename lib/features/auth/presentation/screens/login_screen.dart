@@ -41,13 +41,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text(
                       'Login',
-                      style: ValoGraph.heading2.bold.copyWith(
+                      style: ValoTypoGraph.heading2.bold.copyWith(
                         color: Palette.white500,
                       ),
                     ),
                     Text(
                       'Stay connected with us',
-                      style: ValoGraph.body1.medium.copyWith(
+                      style: ValoTypoGraph.body1.medium.copyWith(
                         color: Palette.white500,
                       ),
                     ),
@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Text(
                           'Dont have Account?',
-                          style: ValoGraph.body2.medium.copyWith(
+                          style: ValoTypoGraph.body2.medium.copyWith(
                             color: Palette.white500,
                           ),
                         ),
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child: Text(
                             'Register',
-                            style: ValoGraph.body2.medium.copyWith(
+                            style: ValoTypoGraph.body2.medium.copyWith(
                               color: Palette.error400,
                             ),
                           ),

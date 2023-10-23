@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'package:valotod_app/core/shared/style/palette.dart';
@@ -33,19 +32,20 @@ class ValoFormWidget extends StatelessWidget {
       },
       controller: controller,
       obscureText: obscuredText,
-      style: ValoGraph.label1.black.copyWith(color: Palette.white500),
+      style: ValoTypoGraph.label1.black.copyWith(color: Palette.white500),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: ValoGraph.body1.medium.copyWith(color: Palette.white500),
+        hintStyle: ValoTypoGraph.body1.medium.copyWith(color: Palette.white500),
         labelText: label,
         prefixIcon: Icon(
           prefixIcon,
           color: Palette.white500,
         ),
         suffixIcon: suffixIcon,
-        labelStyle: ValoGraph.body1.medium.copyWith(color: Palette.white500),
+        labelStyle:
+            ValoTypoGraph.body1.medium.copyWith(color: Palette.white500),
         floatingLabelStyle:
-            ValoGraph.body1.medium.copyWith(color: Palette.white500),
+            ValoTypoGraph.body1.medium.copyWith(color: Palette.white500),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(

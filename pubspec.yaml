@@ -10,6 +10,7 @@ dependencies:
   bloc: ^8.1.2
   dartz: ^0.10.1
   dio: ^5.3.3
+  dot_navigation_bar: ^1.0.2
   equatable: ^2.0.5
   flutter:
     sdk: flutter
@@ -17,10 +18,12 @@ dependencies:
   flutter_gen_runner: ^5.3.1
   flutter_localizations:
     sdk: flutter
+  font_awesome_flutter: ^10.6.0
   gap: ^3.0.1
   get: ^4.6.6
   get_it: ^7.6.4
   google_fonts: ^6.1.0
+  google_nav_bar: ^5.0.6
   intl: ^0.18.1
   json_annotation: ^4.8.1
   mockito: ^5.4.2

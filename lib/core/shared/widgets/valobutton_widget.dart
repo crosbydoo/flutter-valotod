@@ -23,7 +23,7 @@ class ValoButtonWidget extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Text(
             text,
-            style: ValoGraph.body1.black.copyWith(color: Palette.white500),
+            style: ValoTypoGraph.body1.black.copyWith(color: Palette.white500),
           ),
         ),
       ),

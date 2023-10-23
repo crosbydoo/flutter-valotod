@@ -41,13 +41,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   children: [
                     Text(
                       'Register',
-                      style: ValoGraph.heading2.bold.copyWith(
+                      style: ValoTypoGraph.heading2.bold.copyWith(
                         color: Palette.white500,
                       ),
                     ),
                     Text(
                       'Lets join us',
-                      style: ValoGraph.body1.medium.copyWith(
+                      style: ValoTypoGraph.body1.medium.copyWith(
                         color: Palette.white500,
                       ),
                     ),
@@ -57,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       children: [
                         Text(
                           'Already have account?',
-                          style: ValoGraph.body2.medium.copyWith(
+                          style: ValoTypoGraph.body2.medium.copyWith(
                             color: Palette.white500,
                           ),
                         ),
@@ -67,7 +67,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           child: Text(
                             'Login',
-                            style: ValoGraph.body2.medium.copyWith(
+                            style: ValoTypoGraph.body2.medium.copyWith(
                               color: Palette.error400,
                             ),
                           ),

@@ -16,14 +16,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: Colors.black,
-        ),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: Routes.login,
+      initialRoute: Routes.bottomnavbar,
       getPages: Nav.routes,
     );
   }

@@ -16,7 +16,7 @@ class Typograph {
   final TextStyle black;
 }
 
-class ValoGraph {
+class ValoTypoGraph {
   static const String _fontName = 'Montserrat';
 
   //* Heading 1
