@@ -32,7 +32,7 @@ dependencies:
   shared_preferences: ^2.2.2
 
 dev_dependencies:
-  bloc_test: ^9.1.4
+  bloc_test: ^9.1.5
   build_runner: ^2.4.6
   flutter_native_splash: ^2.3.4
   flutter_test:
