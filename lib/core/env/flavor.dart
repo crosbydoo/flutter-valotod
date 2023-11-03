@@ -23,5 +23,5 @@ class FlavorSettings {
       apiBaseUrl: url,
     );
   }
-  static String url = 'http://localhost:4001/api';
+  static String url = 'https://valotod-api.vercel.app/api';
 }

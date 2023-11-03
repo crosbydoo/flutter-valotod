@@ -10,6 +10,7 @@ RegisterModel _$RegisterModelFromJson(Map<String, dynamic> json) =>
     RegisterModel(
       username: json['username'] as String,
       email: json['email'] as String,
+      fullname: json['fullname'] as String,
       password: json['password'] as String,
       isAdmin: json['isAdmin'] as bool,
       imageProfile: json['imageProfile'] as String,

@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -41,7 +40,6 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
             ValoFormWidget(
               label: 'Username',
               prefixIcon: Icons.email_outlined,
-              obscuredText: false,
               controller: email,
               hintText: 'Write your username',
             ),
@@ -74,12 +72,13 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   authCubit.login(
                     LoginBody(username: email.text, password: password.text),
                   );
+
                   Get
                     ..snackbar(
                       'Login Success',
                       'Welcome to the club',
                     )
-                    ..toNamed<void>(Routes.home);
+                    ..toNamed<void>(Routes.bottomnavbar);
                 }
               },
               text: 'Login',

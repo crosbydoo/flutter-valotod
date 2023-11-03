@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:valotod_app/core/di/injection.dart';
+import 'package:valotod_app/core/prefs/shared_preferences.dart';
 import 'package:valotod_app/core/shared/widgets/valonavbar_widget.dart';
+import 'package:valotod_app/features/armory/presentation/screens/armory_screen.dart';
+import 'package:valotod_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:valotod_app/features/home/presentation/screens/home_screen.dart';
+import 'package:valotod_app/features/maps/presentation/screens/maps_screen.dart';
 import 'package:valotod_app/features/profile/presentation/screens/profile_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -15,9 +20,15 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
   PageController pageController = PageController();
 
+  late String nameUser;
+  late String profile;
+
   @override
   void initState() {
     super.initState();
+
+    sl<SharedPrefs>();
+
     pageController.addListener(() {
       final newIndex = pageController.page?.round() ?? 0;
       indexNotifier.value = newIndex;
@@ -37,8 +48,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         controller: pageController,
         children: const <Widget>[
           HomeScreen(),
-          ProfileScreen(),
-          ProfileScreen(),
+          MapsScreen(),
+          ArmoryScreen(),
+          ChatScreen(),
           ProfileScreen(),
         ],
       );

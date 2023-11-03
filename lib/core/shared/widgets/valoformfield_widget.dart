@@ -5,16 +5,16 @@ import 'package:valotod_app/core/shared/style/typograph.dart';
 
 class ValoFormWidget extends StatelessWidget {
   const ValoFormWidget({
-    required this.obscuredText,
     required this.label,
     required this.hintText,
     required this.controller,
+    this.obscuredText,
     super.key,
     this.suffixIcon,
     this.prefixIcon,
   });
 
-  final bool obscuredText;
+  final bool? obscuredText;
   final String label;
   final String hintText;
   final IconButton? suffixIcon;
@@ -31,9 +31,15 @@ class ValoFormWidget extends StatelessWidget {
         return null;
       },
       controller: controller,
-      obscureText: obscuredText,
+      obscureText: obscuredText ?? false,
       style: ValoTypoGraph.label1.black.copyWith(color: Palette.white500),
       decoration: InputDecoration(
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: Palette.white500,
+          ),
+        ),
         hintText: hintText,
         hintStyle: ValoTypoGraph.body1.medium.copyWith(color: Palette.white500),
         labelText: label,

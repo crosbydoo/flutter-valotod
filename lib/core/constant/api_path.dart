@@ -6,4 +6,6 @@ class ApiPath {
   static const valoBuddies = '/valo/buddies';
   static const valoWeapons = '/valo/weapons';
   static const valoMaps = '/valo/maps';
+  static const valoBundles = '/valo/bundles';
+  static const chats = '/chats';
 }

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:valotod_app/core/shared/style/palette.dart';
-import 'package:valotod_app/core/shared/style/typograph.dart';
-import 'package:valotod_app/features/profile/presentation/widgets/photo_profile_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valotod_app/core/constant/prefs_key.dart';
+import 'package:valotod_app/core/di/injection.dart';
+import 'package:valotod_app/core/prefs/shared_preferences.dart';
+import 'package:valotod_app/core/shared/widgets/valobackground_basic_widget.dart';
+import 'package:valotod_app/features/maps/presentation/cubit/maps_cubit.dart';
+import 'package:valotod_app/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:valotod_app/features/profile/presentation/widgets/profile_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -11,34 +16,34 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final profileCubit = sl<ProfileCubit>();
+
+  @override
+  void initState() {
+    profileCubit.getProfile();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    sl<MapsCubit>().close();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Palette.black400,
-      appBar: AppBar(
-        backgroundColor: Palette.black400,
-        title: Text(
-          'Profile',
-          style: ValoTypoGraph.heading2.black,
-        ),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-        child: Column(
-          children: [
-            Center(
-              child: Stack(
-                children: [
-                  CircleAvatar(
-                    maxRadius: 50,
-                    backgroundImage: AssetImage('assets/img/splash.png'),
-                  ),
-                  PhotoProfileWidget(),
-                ],
-              ),
-            ),
-          ],
-        ),
+    final prefs = sl<SharedPrefs>();
+
+    final isLogin = prefs.getString(PrefsKey.accessToken);
+
+    print('halo halo $isLogin');
+    return BlocProvider(
+      create: (context) => profileCubit,
+      child: const Stack(
+        children: [
+          ValoBackgroundBasicWidget(),
+          ProfileWidget(),
+        ],
       ),
     );
   }

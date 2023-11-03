@@ -14,4 +14,5 @@ LoginModel _$LoginModelFromJson(Map<String, dynamic> json) => LoginModel(
       imageProfile: json['imageProfile'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       userToken: json['userToken'] as String,
+      fullname: json['fullname'] as String,
     );

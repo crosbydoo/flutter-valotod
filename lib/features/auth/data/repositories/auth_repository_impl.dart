@@ -20,8 +20,17 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final remoteLogin = await remoteDataSource.login(body);
       final bearerToken = remoteLogin.userToken;
+      final nameUser = remoteLogin.fullname;
+      final photoProfile = remoteLogin.imageProfile;
+      final userUuid = remoteLogin.id;
 
+      print('halo $bearerToken');
+      await localDataSource.saveName(nameUser);
       await localDataSource.saveBearerToken(bearerToken);
+      await localDataSource.saveUserId(userUuid);
+      await localDataSource.savePhotoProfile(photoProfile);
+
+      print('HALO $nameUser');
 
       return Right(remoteLogin);
     } on DioException catch (e) {

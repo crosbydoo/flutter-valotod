@@ -13,6 +13,7 @@ class LoginModel extends LoginEntity {
     required super.imageProfile,
     required super.updatedAt,
     required super.userToken,
+    required super.fullname,
   });
 
   factory LoginModel.fromJson(Map<String, dynamic> json) =>

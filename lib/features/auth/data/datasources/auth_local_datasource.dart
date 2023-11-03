@@ -3,6 +3,9 @@ import 'package:valotod_app/core/prefs/shared_preferences.dart';
 
 abstract class AuthLocalDataSource {
   Future<void> saveBearerToken(String token);
+  Future<void> saveName(String name);
+  Future<void> savePhotoProfile(String profile);
+  Future<void> saveUserId(String profile);
   Future<void> logout();
 }
 
@@ -18,6 +21,21 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
 
   @override
   Future<void> logout() async {
-    await prefs.clearKey(PrefsKey.accessToken);
+    await prefs.clearAll();
+  }
+
+  @override
+  Future<void> saveUserId(String userId) async {
+    await prefs.putString(PrefsKey.userId, userId);
+  }
+
+  @override
+  Future<void> saveName(String name) async {
+    await prefs.putString(PrefsKey.userName, name);
+  }
+
+  @override
+  Future<void> savePhotoProfile(String profile) async {
+    await prefs.putString(PrefsKey.profileUrl, profile);
   }
 }

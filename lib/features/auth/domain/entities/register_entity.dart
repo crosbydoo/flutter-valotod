@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class RegisterEntity extends Equatable {
   const RegisterEntity({
     required this.username,
+    required this.fullname,
     required this.email,
     required this.password,
     required this.isAdmin,
@@ -13,6 +14,7 @@ class RegisterEntity extends Equatable {
     required this.v,
   });
   final String username;
+  final String fullname;
   final String email;
   final String password;
   final bool isAdmin;
@@ -21,11 +23,13 @@ class RegisterEntity extends Equatable {
   final DateTime createdAt;
   final DateTime updatedAt;
   final int v;
+
   @override
   List<Object?> get props => [
         username,
         email,
         password,
+        fullname,
         id,
         isAdmin,
         imageProfile,

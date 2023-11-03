@@ -18,12 +18,34 @@ class $AssetsFontGen {
   /// File path: assets/font/Montserrat-Variable.ttf
   String get montserratVariable => 'assets/font/Montserrat-Variable.ttf';
 
+  /// File path: assets/font/Roboto-Medium.ttf
+  String get robotoMedium => 'assets/font/Roboto-Medium.ttf';
+
   /// List of all assets
-  List<String> get values => [montserratRegular, montserratVariable];
+  List<String> get values =>
+      [montserratRegular, montserratVariable, robotoMedium];
+}
+
+class $AssetsGifGen {
+  const $AssetsGifGen();
+
+  /// File path: assets/gif/jett.gif
+  AssetGenImage get jett => const AssetGenImage('assets/gif/jett.gif');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [jett];
 }
 
 class $AssetsImgGen {
   const $AssetsImgGen();
+
+  /// File path: assets/img/agent_valo.png
+  AssetGenImage get agentValo =>
+      const AssetGenImage('assets/img/agent_valo.png');
+
+  /// File path: assets/img/fade_valo.jpeg
+  AssetGenImage get fadeValo =>
+      const AssetGenImage('assets/img/fade_valo.jpeg');
 
   /// File path: assets/img/jett.png
   AssetGenImage get jett => const AssetGenImage('assets/img/jett.png');
@@ -34,14 +56,20 @@ class $AssetsImgGen {
   /// File path: assets/img/splash.png
   AssetGenImage get splash => const AssetGenImage('assets/img/splash.png');
 
+  /// File path: assets/img/weapon_valo.png
+  AssetGenImage get weaponValo =>
+      const AssetGenImage('assets/img/weapon_valo.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [jett, omen, splash];
+  List<AssetGenImage> get values =>
+      [agentValo, fadeValo, jett, omen, splash, weaponValo];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsFontGen font = $AssetsFontGen();
+  static const $AssetsGifGen gif = $AssetsGifGen();
   static const $AssetsImgGen img = $AssetsImgGen();
 }
 

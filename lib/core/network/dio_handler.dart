@@ -15,7 +15,7 @@ class DioHandler {
 
   Dio _getDio() {
     final header = <String, dynamic>{
-      'isToken': preferences.isKeyExists(PrefsKey.accessToken),
+      'token': preferences.isKeyExists(PrefsKey.accessToken),
     };
 
     final options = BaseOptions(
@@ -47,8 +47,8 @@ class DioHandler {
           'Accept': 'application/json',
         };
 
-        if (options.headers.containsKey('isToken')) {
-          options.headers.remove('isToken');
+        if (options.headers.containsKey('token')) {
+          options.headers.remove('token');
           options.headers.addAll(headers);
         }
 

@@ -36,7 +36,7 @@ class ValoNavBar extends StatelessWidget {
           icon: const Padding(
             padding: EdgeInsets.only(top: 10),
             child: Icon(
-              Icons.home,
+              FontAwesomeIcons.house,
             ),
           ),
           label: 'Home',
@@ -46,10 +46,10 @@ class ValoNavBar extends StatelessWidget {
           icon: const Padding(
             padding: EdgeInsets.only(top: 10),
             child: Icon(
-              Icons.event,
+              FontAwesomeIcons.map,
             ),
           ),
-          label: 'Event',
+          label: 'Maps',
         ),
         BottomNavigationBarItem(
           backgroundColor: Palette.black,
@@ -60,6 +60,16 @@ class ValoNavBar extends StatelessWidget {
             ),
           ),
           label: 'Armory',
+        ),
+        BottomNavigationBarItem(
+          backgroundColor: Palette.black,
+          icon: const Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Icon(
+              FontAwesomeIcons.comments,
+            ),
+          ),
+          label: 'Chat',
         ),
         BottomNavigationBarItem(
           backgroundColor: Palette.black,

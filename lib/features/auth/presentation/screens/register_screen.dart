@@ -63,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.toNamed<void>(Routes.register);
+                            Get.toNamed<void>(Routes.login);
                           },
                           child: Text(
                             'Login',

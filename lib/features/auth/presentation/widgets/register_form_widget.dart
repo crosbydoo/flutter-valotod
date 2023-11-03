@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:valotod_app/core/di/injection.dart';
@@ -21,26 +22,33 @@ class RegisterFormWidget extends StatefulWidget {
 }
 
 class _RegisterFormWidgetState extends State<RegisterFormWidget> {
-  final showPassword = ValueNotifier<bool>(false);
+  final showPassword = ValueNotifier<bool>(true);
   final formKey = GlobalKey<FormState>();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController username = TextEditingController();
+  TextEditingController fullname = TextEditingController();
   final authCubit = sl<AuthCubit>();
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       child: Form(
         key: formKey,
         child: Column(
           children: [
             ValoFormWidget(
+              label: 'Full Name',
+              prefixIcon: FontAwesomeIcons.users,
+              obscuredText: false,
+              controller: fullname,
+              hintText: 'Fill your fullname',
+            ),
+            const Gap(20),
+            ValoFormWidget(
               label: 'Username',
-              prefixIcon: Icons.email_outlined,
+              prefixIcon: Icons.person,
               obscuredText: false,
               controller: username,
               hintText: 'Choose wisely your username',
@@ -84,9 +92,12 @@ class _RegisterFormWidgetState extends State<RegisterFormWidget> {
                       username: username.text,
                       email: email.text,
                       password: password.text,
+                      fullname: fullname.text,
                     ),
                   );
-                  Get.toNamed<void>(Routes.login);
+                  Get
+                    ..snackbar('Register Success', 'now you can login')
+                    ..toNamed<void>(Routes.login);
                 }
               },
               text: 'Register',

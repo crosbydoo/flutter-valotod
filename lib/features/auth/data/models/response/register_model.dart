@@ -8,6 +8,7 @@ class RegisterModel extends RegisterEntity {
   const RegisterModel({
     required super.username,
     required super.email,
+    required super.fullname,
     required super.password,
     required super.isAdmin,
     required super.imageProfile,

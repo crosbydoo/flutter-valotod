@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:valotod_app/core/shared/style/palette.dart';
-import 'package:valotod_app/core/shared/style/typograph.dart';
+import 'package:valotod_app/core/constant/prefs_key.dart';
+import 'package:valotod_app/core/di/injection.dart';
+import 'package:valotod_app/core/prefs/shared_preferences.dart';
+import 'package:valotod_app/core/shared/widgets/valobackground_basic_widget.dart';
+import 'package:valotod_app/features/home/presentation/widgets/home_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,48 +13,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ValueNotifier<bool> showAllIcons = ValueNotifier<bool>(false);
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Palette.black400,
-      appBar: AppBar(
-        backgroundColor: Palette.black400,
-        centerTitle: false,
-        title: Row(
-          children: [
-            const CircleAvatar(
-              backgroundImage: AssetImage('assets/img/splash.png'),
-            ),
-            const Gap(15),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Good Morning',
-                  style: ValoTypoGraph.label3.black,
-                ),
-                Text(
-                  'Hi, UserBot',
-                  style: ValoTypoGraph.heading3.black,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Lets Explore'),
-            Text(
-              'Know More About Valorant',
-              style: ValoTypoGraph.heading3.black,
-            ),
-          ],
-        ),
-      ),
+    final prefs = sl<SharedPrefs>();
+    final nameUser = prefs.getString(PrefsKey.userName);
+    final profile = prefs.getString(PrefsKey.profileUrl);
+
+    print('HALO $nameUser');
+    return const Stack(
+      children: [
+        ValoBackgroundBasicWidget(),
+        HomeWidget(),
+      ],
     );
   }
 }
