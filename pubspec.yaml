@@ -37,7 +37,7 @@ dependencies:
 dev_dependencies:
   bloc_test: ^9.1.4
   build_runner: ^2.4.6
-  flutter_native_splash: ^2.3.4
+  flutter_native_splash: ^2.3.6
   flutter_test:
     sdk: flutter
   json_serializable: ^6.7.1
